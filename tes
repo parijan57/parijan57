@@ -1,0 +1,18 @@
+from Crypto.Hash import SHA256
+
+def generate_sha256(text):
+    # Inisialisasi objek hash SHA-256
+    hasher = SHA256.new()
+    
+    # Update hash dengan teks
+    hasher.update(text.encode('utf-8'))
+    
+    # Dapatkan hash yang dihasilkan
+    sha256_hash = hasher.hexdigest()
+    
+    return sha256_hash
+
+# Contoh penggunaan
+text_to_hash = "Hello, world!"
+sha256_result = generate_sha256(text_to_hash)
+print("SHA-256 hash dari teks '{}' adalah: {}".format(text_to_hash, sha256_result))
